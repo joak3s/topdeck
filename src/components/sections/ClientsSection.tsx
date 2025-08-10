@@ -78,16 +78,15 @@ export const ClientsSection = () => {
               <span className="text-red-500">TRUST TOPDECK.AI</span>
             </h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+            <div className="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center">
               {clients.map((client, index) => (
                 <div key={index} className="group cursor-pointer">
-                  <p className="font-bold text-white mt-3 text-center tracking-wide text-sm">{client.name}</p>
-                  <div className="w-full h-24 bg-black border-2 border-gray-200 flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-4">
+                  <div className="w-full h-32 bg-black border-2 border-gray-200 angular-corner flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-8">
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
-                      width={150}
-                      height={100}
+                      width={400}
+                      height={200}
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>

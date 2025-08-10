@@ -61,9 +61,8 @@ export default function ProductsPage() {
         'Emergency Response Integration'
       ],
       cameraDetails: [
-        'Dome Security Camera',
+        '360° Dome Coverage',
         'Thermal Imaging Sensor',
-        '360° Coverage',
         'Smart Motion Detection',
         'Vandal-Resistant Design'
       ],
@@ -142,7 +141,7 @@ export default function ProductsPage() {
                   {/* Product Image */}
                   <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                     <div className="relative">
-                      <div className="bg-gray-100 p-12 angular-clip border-4 border-black shadow-2xl group-hover:shadow-red-500/25 transition-all duration-300">
+                      <div className="bg-gray-100 p-12 aspect-square flex items-center justify-center angular-clip border-4 border-black shadow-2xl group-hover:shadow-red-500/25 transition-all duration-300">
                         <ImageWithFallback
                           src={product.image}
                           alt={product.title}
@@ -182,7 +181,7 @@ export default function ProductsPage() {
                         {product.keyFeatures.map((feature, idx) => (
                           <div key={idx} className="flex items-center gap-3">
                             <div className="w-2 h-2 bg-red-500 angular-corner flex-shrink-0"></div>
-                            <span className="text-gray-700 font-medium text-sm">{feature}</span>
+                            <span className="text-gray-700 font-medium text-base">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -194,7 +193,7 @@ export default function ProductsPage() {
                         <Camera className="w-5 h-5 text-red-500" />
                         CAMERA SPECIFICATIONS
                       </h3>
-                      <div className="space-y-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {product.cameraDetails.map((detail, idx) => (
                           <div key={idx} className="flex items-center gap-3">
                             <Target className="w-3 h-3 text-red-500 flex-shrink-0" />
