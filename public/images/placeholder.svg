@@ -1,0 +1,10 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F5F5F5"/>
+  <rect x="50" y="50" width="700" height="500" fill="#E0E0E0" stroke="#808080" stroke-width="2"/>
+  <path d="M200 300L300 200L500 250L600 150L700 200" stroke="#FF0000" stroke-width="3" fill="none"/>
+  <circle cx="400" cy="300" r="50" fill="#FF0000" fill-opacity="0.2" stroke="#FF0000" stroke-width="2"/>
+  <rect x="350" y="275" width="100" height="50" fill="#000000"/>
+  <text x="400" y="305" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TOPDECK</text>
+  <text x="400" y="400" text-anchor="middle" fill="#808080" font-family="Arial, sans-serif" font-size="16">Construction Site Placeholder</text>
+  <text x="400" y="420" text-anchor="middle" fill="#808080" font-family="Arial, sans-serif" font-size="12">Replace with crane camera footage</text>
+</svg>
