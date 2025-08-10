@@ -43,16 +43,16 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b-2 border-red-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg border-b-2 border-red-500">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-black hover:opacity-80 transition-opacity group"
+              className="text-white hover:opacity-80 transition-opacity group"
             >
-              <Image src="/images/topdeck-logo-color.svg" alt="Topdeck Logo" width={150} height={100} />
+              <Image src="/images/topdeck-logo-color-lt-grey.svg" alt="Topdeck Logo" width={150} height={100} />
             </Link>
           </div>
 
@@ -65,10 +65,10 @@ export const Navigation = () => {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className={`text-black hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
+                        className={`text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
                           pathname === item.href ||
                           pathname.startsWith(item.href + "/")
-                            ? "bg-red-500 text-white"
+                            ? "bg-red-500 text-black"
                             : ""
                         }`}
                       >
@@ -76,12 +76,12 @@ export const Navigation = () => {
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-white border-red-500 border-2">
+                    <DropdownMenuContent className="bg-black border-red-500 border-2">
                       {item.dropdown.map((subItem) => (
                         <DropdownMenuItem key={subItem.label} asChild>
                           <Link
                             href={subItem.href}
-                            className="text-black hover:bg-red-500 focus:bg-red-500 font-medium cursor-pointer"
+                            className="text-white hover:bg-red-500 focus:bg-red-500 font-medium cursor-pointer"
                           >
                             {subItem.label}
                           </Link>
@@ -93,10 +93,10 @@ export const Navigation = () => {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className={`text-black hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
+                    className={`text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
                       pathname === item.href ||
                       (item.href !== "/" && pathname.startsWith(item.href))
-                        ? "bg-red-500 text-white"
+                        ? "bg-red-500 text-black"
                         : ""
                     }`}
                   >

@@ -40,12 +40,12 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
 
       {/* Two-Column Content Layout */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] mt-24 lg:mt-0">
           {/* Left Column - Hero Text Content */}
           <div className="flex flex-col justify-center space-y-8">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-none tracking-tight">
+              <h1 className="text-white text-5xl lg:text-6xl xl:text-7xl font-black leading-none tracking-tight">
                 YOUR TOP DECK
                 <br />
                 <span className="text-red-500 drop-shadow-xl">
