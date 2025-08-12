@@ -11,10 +11,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Topdeck.ai - AI-Powered Construction Site Intelligence",
+  title: "Topdeck - AI-Powered Construction Site Intelligence",
   description: "Transform your construction site with AI-powered monitoring, real-time analytics, and comprehensive security through our revolutionary crane-mounted camera system.",
   keywords: "construction technology, AI monitoring, crane cameras, jobsite intelligence, construction security, project management",
-  authors: [{ name: "Topdeck.ai" }],
+  authors: [{ name: "Topdeck" }],
+  icons: {
+    icon: "/Topdeck-Logo-Favicon.png",
+    shortcut: "/Topdeck-Logo-Favicon.png",
+    apple: "/Topdeck-Logo-Favicon.png",
+  },
 };
 
 export const viewport = {
