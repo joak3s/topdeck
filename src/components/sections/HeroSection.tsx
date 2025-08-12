@@ -136,7 +136,7 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
               </div>
 
               {/* Additional Info Below Video */}
-              <div className="mt-6 space-y-3">
+              <div className="my-6 space-y-3">
                 <div className="flex items-center justify-between text-white/80 text-sm">
                   <span className="font-medium">
                     Crane-Mounted Camera Feed
@@ -174,7 +174,7 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
       </div>
 
       {/* Angular Scroll Indicator */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white lg:hidden">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white hidden">
         <div className="w-8 h-12 border-4 border-white flex justify-center animate-bounce">
           <div className="w-2 h-4 bg-red-500 mt-2 animate-pulse"></div>
         </div>
