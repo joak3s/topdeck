@@ -241,3 +241,113 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Custom DatePicker Styles for Topdeck */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #000000;
+  font-weight: 500;
+  outline: none;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+
+.react-datepicker__input-container input:focus {
+  border-color: #FF0000;
+  box-shadow: none;
+}
+
+.react-datepicker__input-container input::placeholder {
+  color: #6B7280;
+}
+
+.react-datepicker {
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.react-datepicker__header {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FF0000 !important;
+  border-radius: 0 !important;
+}
+
+.react-datepicker__current-month {
+  color: white !important;
+  font-weight: 900 !important;
+  font-size: 1.1rem !important;
+}
+
+.react-datepicker__day-name {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day {
+  border-radius: 0 !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #FF0000 !important;
+  color: white !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #FF0000 !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.react-datepicker__day--in-range {
+  background-color: #FFE5E5 !important;
+  color: #000000 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: #FF0000 !important;
+  color: white !important;
+}
+
+.react-datepicker__navigation {
+  border: none !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: white !important;
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  background-color: white !important;
+  border: 2px solid #000000 !important;
+  border-radius: 0 !important;
+}
+
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 0.5rem !important;
+  font-weight: 500 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #FF0000 !important;
+  color: white !important;
+}
+
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  background-color: #FF0000 !important;
+  color: white !important;
+  font-weight: 700 !important;
+}

@@ -4,25 +4,31 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Send, 
-  Upload, 
-  CheckCircle, 
-  Camera, 
-  Shield, 
+import DatePicker from "react-datepicker";
+import { differenceInMonths, format } from "date-fns";
+import {
+  Send,
+  Upload,
+  CheckCircle,
+  Camera,
+  Shield,
   BarChart3,
   Building,
   Clock,
   MapPin,
-  FileText
+  FileText,
+  Calendar
 } from "lucide-react";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 interface FormData {
   name: string;
   email: string;
   company: string;
   projectType: string;
-  projectDuration: string;
+  targetStartDate: Date | null;
+  targetEndDate: Date | null;
   scope: string[];
   siteLocation: string;
   cameraCount: string;
@@ -36,7 +42,8 @@ export default function RequestQuotePage() {
     email: "",
     company: "",
     projectType: "",
-    projectDuration: "",
+    targetStartDate: null,
+    targetEndDate: null,
     scope: [],
     siteLocation: "",
     cameraCount: "",
@@ -55,12 +62,7 @@ export default function RequestQuotePage() {
     "Other"
   ];
 
-  const projectDurations = [
-    "Less than 6 months",
-    "6-12 months",
-    "Over 12 months",
-    "Ongoing/Multiple phases"
-  ];
+
 
   const scopeOptions = [
     { id: "reality-capture", label: "Reality Capture (AI Analytics)", icon: BarChart3 },
@@ -100,10 +102,10 @@ export default function RequestQuotePage() {
 
     // Simulate form submission
     console.log("Quote request submitted:", formData);
-    
+
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
@@ -114,7 +116,8 @@ export default function RequestQuotePage() {
       email: "",
       company: "",
       projectType: "",
-      projectDuration: "",
+      targetStartDate: null,
+      targetEndDate: null,
       scope: [],
       siteLocation: "",
       cameraCount: "",
@@ -135,7 +138,7 @@ export default function RequestQuotePage() {
                 Quote Request Submitted Successfully!
               </h1>
               <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-                Thank you for your interest in Topdeck.ai. Our team will review your project details and 
+                Thank you for your interest in Topdeck.ai. Our team will review your project details and
                 contact you within 24 hours with a customized quote and next steps.
               </p>
               <div className="space-y-4">
@@ -172,7 +175,7 @@ export default function RequestQuotePage() {
               REQUEST A <span className="text-red-500">CUSTOM QUOTE</span>
             </h1>
             <p className="text-white/90 text-xl font-medium max-w-4xl mx-auto">
-              Provide details about your project to receive an accurate quote for our AI-driven construction solutions, 
+              Provide details about your project to receive an accurate quote for our AI-driven construction solutions,
               including Reality Capture, Construction Cameras, and Security Cameras.
             </p>
           </div>
@@ -251,46 +254,84 @@ export default function RequestQuotePage() {
                     <FileText className="w-6 h-6 text-red-500 mr-3" />
                     PROJECT INFORMATION
                   </h3>
+
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="projectType" className="block text-black font-bold mb-2">
+                      Project Type *
+                    </label>
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      required
+                      value={formData.projectType}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                    >
+                      <option value="">Select project type</option>
+                      {projectTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="projectType" className="block text-black font-bold mb-2">
-                        Project Type *
+                      <label className="block text-black font-bold mb-2">
+                        Target Start Date *
                       </label>
-                      <select
-                        id="projectType"
-                        name="projectType"
-                        required
-                        value={formData.projectType}
-                        onChange={handleInputChange}
+                      <DatePicker
+                        selected={formData.targetStartDate}
+                        onChange={(date) => setFormData(prev => ({ ...prev, targetStartDate: date }))}
+                        selectsStart
+                        startDate={formData.targetStartDate}
+                        endDate={formData.targetEndDate}
+                        minDate={new Date()}
+                        dateFormat="MM/dd/yyyy"
+                        placeholderText="Select start date"
                         className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
-                      >
-                        <option value="">Select project type</option>
-                        {projectTypes.map((type) => (
-                          <option key={type} value={type}>
-                            {type}
-                          </option>
-                        ))}
-                      </select>
+                        showMonthDropdown
+                        showYearDropdown
+                        dropdownMode="select"
+                      />
                     </div>
+
                     <div>
-                      <label htmlFor="projectDuration" className="block text-black font-bold mb-2">
-                        Project Duration *
+                      <label className="block text-black font-bold mb-2">
+                        Target End Date *
                       </label>
-                      <select
-                        id="projectDuration"
-                        name="projectDuration"
-                        required
-                        value={formData.projectDuration}
-                        onChange={handleInputChange}
+                      <DatePicker
+                        selected={formData.targetEndDate}
+                        onChange={(date) => setFormData(prev => ({ ...prev, targetEndDate: date }))}
+                        selectsEnd
+                        startDate={formData.targetStartDate}
+                        endDate={formData.targetEndDate}
+                        minDate={formData.targetStartDate || new Date()}
+                        dateFormat="MM/dd/yyyy"
+                        placeholderText="Select end date"
                         className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
-                      >
-                        <option value="">Select duration</option>
-                        {projectDurations.map((duration) => (
-                          <option key={duration} value={duration}>
-                            {duration}
-                          </option>
-                        ))}
-                      </select>
+                        showMonthDropdown
+                        showYearDropdown
+                        dropdownMode="select"
+                      />
+                    </div>
+                    <div className="flex items-end">
+                      {formData.targetStartDate && formData.targetEndDate && (
+                        <div className="w-full px-4 py-3 border-2 border-gray-300 bg-gray-50 angular-corner">
+                          <p className="text-sm font-medium text-gray-700">
+                            <span className="font-bold">Duration:</span>{" "}
+                            {differenceInMonths(formData.targetEndDate, formData.targetStartDate)} months
+                          </p>
+                          <p className="text-xs text-gray-500 mt-1">
+                            {format(formData.targetStartDate, "MMM dd, yyyy")} - {format(formData.targetEndDate, "MMM dd, yyyy")}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -312,11 +353,10 @@ export default function RequestQuotePage() {
                         <div
                           key={option.id}
                           onClick={() => handleScopeChange(option.id)}
-                          className={`p-4 border-2 cursor-pointer transition-all duration-200 angular-corner ${
-                            isSelected
+                          className={`p-4 border-2 cursor-pointer transition-all duration-200 angular-corner ${isSelected
                               ? "border-red-500 bg-red-50"
                               : "border-black hover:border-red-500 bg-white"
-                          }`}
+                            }`}
                         >
                           <div className="flex items-start space-x-3">
                             <div className={`p-2 rounded ${isSelected ? "bg-red-500" : "bg-gray-200"}`}>
@@ -327,9 +367,8 @@ export default function RequestQuotePage() {
                                 {option.label}
                               </h4>
                             </div>
-                            <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                              isSelected ? "border-red-500 bg-red-500" : "border-gray-300"
-                            }`}>
+                            <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${isSelected ? "border-red-500 bg-red-500" : "border-gray-300"
+                              }`}>
                               {isSelected && <CheckCircle className="w-3 h-3 text-white" />}
                             </div>
                           </div>
@@ -432,8 +471,8 @@ export default function RequestQuotePage() {
                 <div className="pt-6">
                   <Button
                     type="submit"
-                    disabled={isSubmitting || formData.scope.length === 0}
-                    className="w-full bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white px-8 py-4 font-black text-lg border-4 border-black hover:border-red-600 disabled:border-gray-400 transition-all duration-200 angular-corner"
+                    disabled={isSubmitting || formData.scope.length === 0 || !formData.targetStartDate || !formData.targetEndDate}
+                    className="w-full bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 disabled:border-gray-400 transition-all duration-200 angular-corner"
                   >
                     {isSubmitting ? (
                       <>
@@ -447,10 +486,18 @@ export default function RequestQuotePage() {
                       </>
                     )}
                   </Button>
-                  {formData.scope.length === 0 && (
-                    <p className="text-red-500 text-sm mt-2 text-center font-medium">
-                      Please select at least one solution scope to continue
-                    </p>
+                  {(formData.scope.length === 0 || !formData.targetStartDate || !formData.targetEndDate) && (
+                    <div className="text-red-500 text-sm mt-2 text-center font-medium space-y-1">
+                      {formData.scope.length === 0 && (
+                        <p>Please select at least one solution scope to continue</p>
+                      )}
+                      {!formData.targetStartDate && (
+                        <p>Please select a target start date</p>
+                      )}
+                      {!formData.targetEndDate && (
+                        <p>Please select a target end date</p>
+                      )}
+                    </div>
                   )}
                 </div>
               </form>
