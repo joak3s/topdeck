@@ -1,13 +1,11 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ImageWithFallback } from '@/components/ui/ImageWithFallback';
 import {
   Camera,
   BarChart3,
   Shield,
-  Target,
   Cpu,
-  Activity,
   ArrowRight,
   CheckCircleIcon,
   Eye,

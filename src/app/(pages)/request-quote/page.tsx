@@ -302,7 +302,7 @@ export default function RequestQuotePage() {
                     SOLUTION SCOPE *
                   </h3>
                   <p className="text-gray-600 font-medium">
-                    Select all solutions you're interested in (multiple selections allowed):
+                    Select all solutions you&apos;re interested in (multiple selections allowed):
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {scopeOptions.map((option) => {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, QuoteIcon, FileScan } from "lucide-react";
+import { Mail, Phone, MapPin, Send, FileScan } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
