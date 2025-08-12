@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-black text-white py-16 concrete-texture">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-2">
@@ -34,32 +34,32 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Products */}
           <div>
-            <h3 className="text-white font-black text-lg mb-6 tracking-wide">SOLUTIONS</h3>
+            <h3 className="text-white font-black text-lg mb-6 tracking-wide">PRODUCTS</h3>
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/solutions"
+                  href="/products#ai-reality-capture"
                   className="text-white/80 hover:text-red-500 font-medium transition-colors"
                 >
-                  Project Intelligence
+                  AI Reality Capture
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions"
+                  href="/products#remote-monitoring"
                   className="text-white/80 hover:text-red-500 font-medium transition-colors"
                 >
-                  Construction Cameras
+                  Remote Monitoring
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions"
+                  href="/products#site-security"
                   className="text-white/80 hover:text-red-500 font-medium transition-colors"
                 >
-                  Security Systems
+                  Site Security
                 </Link>
               </li>
               <li>
@@ -82,7 +82,7 @@ export const Footer = () => {
                   href="/about"
                   className="text-white/80 hover:text-red-500 font-medium transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export const Footer = () => {
                   href="/clients"
                   className="text-white/80 hover:text-red-500 font-medium transition-colors"
                 >
-                  Case Studies
+                  Clients
                 </Link>
               </li>
               <li>
@@ -123,16 +123,10 @@ export const Footer = () => {
             </div>
             <div className="flex items-center space-x-8">
               <Link
-                href="/privacy"
+                href="/request-quote"
                 className="text-white/60 hover:text-red-500 font-medium transition-colors"
               >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-white/60 hover:text-red-500 font-medium transition-colors"
-              >
-                Terms of Service
+                Request Quote
               </Link>
             </div>
           </div>

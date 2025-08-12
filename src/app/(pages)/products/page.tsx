@@ -15,12 +15,41 @@ import {
   Target,
   BarChart3
 } from 'lucide-react';
-
+import Link from 'next/link';
 export default function ProductsPage() {
   const products = [
     {
+      id: 'ai-reality-capture',
+      title: 'AI REALITY CAPTURE',
+      description: 'Advanced AI-driven analytics platform that transforms visual data into actionable insights for project optimization.',
+      image: '/images/topdeck-mapping-camera.png',
+      keyFeatures: [
+        'AI-Driven Analytics',
+        'Blueprint Overlays',
+        'Progress Tracking',
+        'Quality Control Analysis',
+        'Orthomosaic Map Generation',
+        'Custom Reporting Dashboard'
+      ],
+      cameraDetails: [
+        'Mapping Camera System',
+        'High-Resolution Sensors',
+        'GPS Integration',
+        'Multi-Spectral Imaging',
+        'Precision Calibration'
+      ],
+      benefits: [
+        'Automate progress documentation',
+        'Identify issues before they escalate',
+        'Generate accurate site measurements'
+      ],
+      icon: <Eye className="w-8 h-8" />,
+      ctaText: 'Explore AI Reality Capture',
+      color: 'red'
+    },
+    {
       id: 'remote-monitoring',
-      title: 'REMOTE MONITORING (UHD)',
+      title: 'REMOTE MONITORING',
       description: 'Ultra-high definition remote monitoring solution providing real-time visibility of your construction site from anywhere in the world.',
       image: '/images/topdeck-telephoto-ptz-camera.png',
       keyFeatures: [
@@ -74,35 +103,6 @@ export default function ProductsPage() {
       icon: <Shield className="w-8 h-8" />,
       ctaText: 'Explore Site Security',
       color: 'black'
-    },
-    {
-      id: 'ai-reality-capture',
-      title: 'AI REALITY CAPTURE',
-      description: 'Advanced AI-driven analytics platform that transforms visual data into actionable insights for project optimization.',
-      image: '/images/topdeck-mapping-camera.png',
-      keyFeatures: [
-        'AI-Driven Analytics',
-        'Blueprint Overlays',
-        'Progress Tracking',
-        'Quality Control Analysis',
-        'Orthomosaic Map Generation',
-        'Custom Reporting Dashboard'
-      ],
-      cameraDetails: [
-        'Mapping Camera System',
-        'High-Resolution Sensors',
-        'GPS Integration',
-        'Multi-Spectral Imaging',
-        'Precision Calibration'
-      ],
-      benefits: [
-        'Automate progress documentation',
-        'Identify issues before they escalate',
-        'Generate accurate site measurements'
-      ],
-      icon: <Eye className="w-8 h-8" />,
-      ctaText: 'Explore AI Reality Capture',
-      color: 'red'
     }
   ];
 
@@ -130,7 +130,7 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <section className="py-20 bg-white concrete-pattern">
-        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24">
             {products.map((product, index) => (
               <div key={product.id} className="group">
@@ -218,20 +218,7 @@ export default function ProductsPage() {
                         ))}
                       </div>
                     </div>
-
-                    {/* CTA Button */}
-                    <div className="pt-4">
-                      <Button 
-                        className={`${
-                          product.color === 'red' 
-                            ? 'bg-red-500 hover:bg-red-600 text-white border-4 border-black hover:border-red-600' 
-                            : 'bg-black hover:bg-gray-900 text-white border-4 border-red-500 hover:border-red-600'
-                        } px-8 py-4 font-black text-lg angular-corner group transition-all duration-200`}
-                      >
-                        {product.ctaText}
-                        <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
+    
                   </div>
                 </div>
               </div>
@@ -296,10 +283,12 @@ export default function ProductsPage() {
 
           {/* Final CTA */}
           <div className="text-center mt-16">
-            <Button className="bg-red-500 hover:bg-red-600 text-white border-4 border-white hover:border-red-600 px-12 py-4 font-black text-xl angular-corner">
-              REQUEST CUSTOM SOLUTION
-              <ArrowRight className="w-6 h-6 ml-3" />
-            </Button>
+            <Link href="/request-quote">
+              <Button className="bg-red-500 hover:bg-red-600 text-white border-4 border-white hover:border-red-600 px-12 py-6 font-black text-xl angular-corner">
+                REQUEST CUSTOM SOLUTION
+                <ArrowRight className="w-6 h-6 ml-3" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

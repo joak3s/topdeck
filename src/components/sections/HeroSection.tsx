@@ -39,13 +39,13 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
       </div>
 
       {/* Two-Column Content Layout */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] mt-24 lg:mt-0">
           {/* Left Column - Hero Text Content */}
           <div className="flex flex-col justify-center space-y-8">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-white text-5xl lg:text-6xl xl:text-7xl font-black leading-none tracking-tight">
+              <h1 className="text-white text-6xl lg:text-7xl font-black leading-none tracking-tight">
                 YOUR TOP DECK
                 <br />
                 <span className="text-red-500 drop-shadow-xl">
@@ -108,11 +108,15 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
               {/* Decorative SVG Border Container */}
               <div className="relative">
                 {/* Main Video Container */}
-                <div className="relative bg-black/90 backdrop-blur-sm border-4 border-red-500 aspect-video angular-clip overflow-hidden shadow-2xl">
-                  {/* Video Placeholder Content */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-black/80 flex items-center justify-center">
+                <div className="relative bg-black/90 backdrop-blur-sm border-4 border-black/80 aspect-video angular-clip overflow-hidden shadow-2xl">
+                  {/* Video Container with Gradient Overlay */}
+                  <div className="absolute aspect-video inset-0 bg-gradient-to-br from-red-500/20 to-black/80 flex items-center justify-center">
                     <div className="text-center space-y-4">
+                      {/* Video Content */}
                       <video src="/videos/Topdeck-Hero-v0.mp4" autoPlay muted loop className="w-full h-full object-cover" />
+
+                      {/* Video Overlay with Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-black/60"></div>
 
                     </div>
                   </div>
@@ -128,37 +132,37 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
 
                 {/* Decorative Border Elements */}
                 <div className="absolute -inset-2 border-2 border-white/20 angular-clip -z-10"></div>
-                <div className="absolute -inset-4 border border-red-500/30 angular-clip -z-20"></div>
+                <div className="absolute -inset-4 border border-red-500/80 angular-clip -z-20"></div>
               </div>
 
               {/* Additional Info Below Video */}
               <div className="mt-6 space-y-3">
                 <div className="flex items-center justify-between text-white/80 text-sm">
                   <span className="font-medium">
-                    Crane Camera Feed
+                    Crane-Mounted Camera Feed
                   </span>
                   <span className="font-bold text-red-500">
                     ●REC
                   </span>
                 </div>
-                <div className="grid grid-cols-3 gap-2 text-xs">
+                <div className="grid grid-cols-3 gap-2">
                   <div className="bg-black/60 backdrop-blur-sm border border-white/20 p-2 text-center angular-corner">
                     <div className="text-red-500 font-bold">
                       360°
                     </div>
-                    <div className="text-white/70">VIEW</div>
+                    <div className="text-white/70 text-sm">VIEW</div>
                   </div>
                   <div className="bg-black/60 backdrop-blur-sm border border-white/20 p-2 text-center angular-corner">
                     <div className="text-red-500 font-bold">
                       24/7
                     </div>
-                    <div className="text-white/70">MONITOR</div>
+                    <div className="text-white/70 text-sm">MONITOR</div>
                   </div>
                   <div className="bg-black/60 backdrop-blur-sm border border-white/20 p-2 text-center angular-corner">
                     <div className="text-red-500 font-bold">
                       AI
                     </div>
-                    <div className="text-white/70">
+                    <div className="text-white/70 text-sm">
                       ANALYTICS
                     </div>
                   </div>
@@ -170,7 +174,7 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
       </div>
 
       {/* Angular Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white lg:hidden">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-white lg:hidden">
         <div className="w-8 h-12 border-4 border-white flex justify-center animate-bounce">
           <div className="w-2 h-4 bg-red-500 mt-2 animate-pulse"></div>
         </div>

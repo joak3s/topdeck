@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, QuoteIcon, FileScan } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -57,7 +58,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-black text-black mb-8 tracking-tight">
-                REQUEST A <span className="text-red-500">QUOTE</span>
+                SEND US A <span className="text-red-500">MESSAGE</span>
               </h2>
               
               <Card className="border-4 border-black shadow-xl angular-corner">
@@ -167,7 +168,7 @@ export default function ContactPage() {
 
                     <Button
                       type="submit"
-                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner"
+                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       SEND INQUIRY
@@ -204,7 +205,6 @@ export default function ContactPage() {
                     </p>
                   </CardContent>
                 </Card>
-
                 <Card className="border-4 border-black shadow-xl angular-corner">
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
@@ -228,18 +228,35 @@ export default function ContactPage() {
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
                       <MapPin className="w-6 h-6 text-red-500 mr-3" />
-                      VISIT US
+                      LOCATION
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-700 font-medium">
-                      Los Angeles, California
-                      <br />
-                      United States
+                      Pasadena, California, United States
                     </p>
                     <p className="text-gray-600 text-sm mt-2">
                       Linked with the JPL/Caltech ecosystem
                     </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-4 border-black shadow-xl angular-corner">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-black font-black">
+                      <FileScan className="w-6 h-6 text-red-500 mr-3" />
+                      REQUEST A QUOTE
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 font-medium mb-4">
+                      To provide you with a detailed quote, please fill out the form on this following page
+                    </p>
+                    <Link href="/request-quote">
+                      <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 font-bold border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner">
+                        REQUEST QUOTE
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

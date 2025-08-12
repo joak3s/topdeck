@@ -15,6 +15,7 @@ import Image from "next/image";
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   const navItems = [
@@ -24,9 +25,9 @@ export const Navigation = () => {
       label: "Products",
       href: "/products",
       dropdown: [
+        { label: "AI Reality Capture", href: "/products#ai-reality-capture" },
         { label: "Remote Monitoring", href: "/products#remote-monitoring" },
         { label: "Site Security", href: "/products#site-security" },
-        { label: "AI Reality Capture", href: "/products#ai-reality-capture" },
       ],
     },
     { id: "clients", label: "Clients", href: "/clients" },
@@ -42,9 +43,17 @@ export const Navigation = () => {
     setMobileMenuOpen(false);
   };
 
+  const handleDropdownHover = (itemId: string) => {
+    setHoveredDropdown(itemId);
+  };
+
+  const handleDropdownLeave = () => {
+    setHoveredDropdown(null);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg border-b-2 border-red-500">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -61,8 +70,13 @@ export const Navigation = () => {
             <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) =>
                 item.dropdown ? (
-                  <DropdownMenu key={item.id}>
-                    <DropdownMenuTrigger asChild>
+                  <div
+                    key={item.id}
+                    className="relative"
+                    onMouseEnter={() => handleDropdownHover(item.id)}
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    <Link href={item.href}>
                       <Button
                         variant="ghost"
                         className={`text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
@@ -75,20 +89,23 @@ export const Navigation = () => {
                         {item.label}
                         <ChevronDown className="ml-1 h-4 w-4" />
                       </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-black border-red-500 border-2">
-                      {item.dropdown.map((subItem) => (
-                        <DropdownMenuItem key={subItem.label} asChild>
+                    </Link>
+                    
+                    {/* Custom Dropdown Menu */}
+                    {hoveredDropdown === item.id && (
+                      <div className="absolute top-full left-0 bg-black border-red-500 border-2 rounded-md shadow-lg min-w-[200px] z-50">
+                        {item.dropdown.map((subItem) => (
                           <Link
+                            key={subItem.label}
                             href={subItem.href}
-                            className="text-white hover:bg-red-500 focus:bg-red-500 font-medium cursor-pointer"
+                            className="block text-white hover:bg-red-500 focus:bg-red-500 font-medium cursor-pointer px-4 py-3 transition-colors"
                           >
                             {subItem.label}
                           </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <Link
                     key={item.id}
@@ -109,7 +126,7 @@ export const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/contact">
+            <Link href="/request-quote">
               <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200">
                 REQUEST QUOTE
               </Button>
@@ -137,21 +154,36 @@ export const Navigation = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black border-t-2 border-red-500">
               {navItems.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  onClick={handleMobileMenuClose}
-                  className={`text-white hover:bg-red-500 block px-4 py-3 font-semibold w-full text-left transition-colors ${
-                    pathname === item.href ||
-                    (item.href !== "/" && pathname.startsWith(item.href))
-                      ? "bg-red-500 text-white"
-                      : ""
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.id}>
+                  <Link
+                    href={item.href}
+                    onClick={handleMobileMenuClose}
+                    className={`text-white hover:bg-red-500 block px-4 py-3 font-semibold w-full text-left transition-colors ${
+                      pathname === item.href ||
+                      (item.href !== "/" && pathname.startsWith(item.href))
+                        ? "bg-red-500 text-white"
+                        : ""
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.dropdown && (
+                    <div className="ml-4 space-y-1">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.label}
+                          href={subItem.href}
+                          onClick={handleMobileMenuClose}
+                          className="text-white/80 hover:bg-red-500 hover:text-white block px-4 py-2 font-medium w-full text-left transition-colors text-sm"
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
-              <Link href="/contact" onClick={handleMobileMenuClose}>
+              <Link href="/request-quote" onClick={handleMobileMenuClose}>
                 <Button className="bg-red-500 hover:bg-red-600 text-white w-full mt-4 font-bold">
                   REQUEST QUOTE
                 </Button>

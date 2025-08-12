@@ -167,8 +167,8 @@
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
 }
 
-.main-container {
-  max-width: 1200px;
+.max-w-8xl {
+  max-width: 96rem;
   margin: 0 auto;
 }
 

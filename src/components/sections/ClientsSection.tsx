@@ -75,7 +75,7 @@ export const ClientsSection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-8 tracking-tight">
               LEADING CONSTRUCTION COMPANIES
               <br />
-              <span className="text-red-500">TRUST TOPDECK.AI</span>
+              <span className="text-red-500">TRUST TOPDECK</span>
             </h2>
             
             <div className="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center">
@@ -108,7 +108,7 @@ export const ClientsSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-black border-4 border-red-500 shadow-2xl hover:shadow-red-500/25 transition-all duration-300 angular-corner">
+              <Card key={index} className="bg-black border-4 border-red-500 shadow-2xl hover:shadow-red-500/25 transition-all duration-300 angular-corner ">
                 <CardContent className="p-8">
                   <Quote className="w-10 h-10 text-red-500 mb-6" />
                   <blockquote className="text-white text-lg leading-relaxed mb-8 font-medium">
@@ -162,7 +162,7 @@ export const ClientsSection = () => {
                   <div className="grid grid-cols-3 gap-6">
                     {study.metrics.map((metric, idx) => (
                       <div key={idx} className="text-center bg-gray-50 p-4 border-2 border-red-500 angular-corner">
-                        <p className="text-3xl font-black text-red-500 mb-1">{metric.value}</p>
+                        <p className="text-2xl font-black text-red-500 mb-1">{metric.value}</p>
                         <p className="text-black font-bold text-xs tracking-wide">{metric.label}</p>
                       </div>
                     ))}
@@ -173,7 +173,7 @@ export const ClientsSection = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-12 py-4 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner">
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-12 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner">
               VIEW ALL CASE STUDIES
             </Button>
           </div>
