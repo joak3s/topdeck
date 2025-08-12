@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   keywords: "construction technology, AI monitoring, crane cameras, jobsite intelligence, construction security, project management",
   authors: [{ name: "Topdeck" }],
   icons: {
-    icon: "/Topdeck-Logo-Favicon.png",
-    shortcut: "/Topdeck-Logo-Favicon.png",
-    apple: "/Topdeck-Logo-Favicon.png",
+    icon: "/Topdeck-White-Shadow-Iso.png",
+    shortcut: "/Topdeck-White-Shadow-Iso.png",
+    apple: "/Topdeck-White-Shadow-Iso.png",
   },
 };
 
