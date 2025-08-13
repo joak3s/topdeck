@@ -45,7 +45,7 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
           <div className="flex flex-col justify-center space-y-8">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-white text-6xl lg:text-7xl font-black leading-none tracking-tight">
+              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight">
                 YOUR TOP DECK
                 <br />
                 <span className="text-red-500 drop-shadow-xl">

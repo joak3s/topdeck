@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Quote, ArrowRight } from 'lucide-react';
@@ -6,11 +8,11 @@ import Image from 'next/image';
 
 export const ClientsSection = () => {
   const clients = [
-    { name: "Hensel Phelps", logo: "/images/clients/hensel-phelps.png" },
-    { name: "Bluebeam", logo: "/images/clients/bluebeam.png" },
-    { name: "Swinerton", logo: "/images/clients/swinerton.png" },
-    { name: "Bigge Crane", logo: "/images/clients/bigge.png" },
-    { name: "SCG America", logo: "/images/clients/scg-america.png" }
+    { name: "Hensel Phelps", logo: "/images/clients/hensel-phelps.png", href: "https://www.henselphelps.com/" },
+    { name: "Bluebeam", logo: "/images/clients/bluebeam.png", href: "https://www.bluebeam.com/" },
+    { name: "Swinerton", logo: "/images/clients/swinerton.png", href: "https://www.swinerton.com/" },
+    { name: "Bigge Crane", logo: "/images/clients/bigge.png", href: "https://www.bigge.com/" },
+    { name: "SCG America", logo: "/images/clients/scg-america.png", href: "https://www.scgamerica.com/" }
   ];
 
   const testimonials = [
@@ -80,14 +82,14 @@ export const ClientsSection = () => {
             
             <div className="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center">
               {clients.map((client, index) => (
-                <div key={index} className="group cursor-pointer">
+                <div key={index} className="group cursor-pointer" onClick={() => window.open(client.href, '_blank')}>
                   <div className="w-full h-32 bg-black border-2 border-gray-200 angular-corner flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-8">
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
                       width={400}
                       height={200}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 cursor-pointer"
                     />
                   </div>
                 </div>
