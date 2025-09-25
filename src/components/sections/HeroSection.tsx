@@ -4,20 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, BarChart3, Shield, Eye } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-interface HeroSectionProps {
-  onRequestQuote?: () => void;
-}
-
-export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
-  const handleRequestQuote = () => {
-    if (onRequestQuote) {
-      onRequestQuote();
-    } else {
-      // Default behavior - navigate to contact page
-      window.location.href = "/contact";
-    }
-  };
+export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -45,10 +34,10 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
           <div className="flex flex-col justify-center space-y-8">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight">
+              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-snug tracking-tight">
                 YOUR TOP DECK
                 <br />
-                <span className="text-red-500 drop-shadow-xl">
+                <span className="text-red-500 bg-black/70 px-4 py-2 angular-corner-xl drop-shadow-xl">
                   FULLY DIGITIZED
                 </span>
               </h1>
@@ -68,13 +57,14 @@ export const HeroSection = ({ onRequestQuote }: HeroSectionProps) => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button
-                onClick={handleRequestQuote}
-                size="lg"
-                className="bg-red-500 hover:bg-white text-black px-10 py-6 text-lg font-black shadow-2xl border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner"
-              >
-                REQUEST A QUOTE
-              </Button>
+              <Link href="/request-quote">
+                <Button
+                  size="lg"
+                  className="bg-red-500 hover:bg-white text-black px-10 py-6 text-lg font-black shadow-2xl border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner"
+                >
+                  REQUEST A QUOTE
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 size="lg"

@@ -161,7 +161,7 @@ export const ClientsSection = () => {
                   <h4 className="text-2xl font-black text-black mb-6 tracking-wide">{study.title}</h4>
                   <p className="text-gray-700 mb-8 font-medium text-lg leading-relaxed">{study.description}</p>
                   
-                  <div className="grid grid-cols-3 gap-6">
+                  <div className="flex flex-col sm:grid sm:grid-cols-3 gap-6">
                     {study.metrics.map((metric, idx) => (
                       <div key={idx} className="text-center bg-gray-50 p-4 border-2 border-red-500 angular-corner">
                         <p className="text-2xl font-black text-red-500 mb-1">{metric.value}</p>
