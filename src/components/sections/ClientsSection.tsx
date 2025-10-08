@@ -71,7 +71,7 @@ export const ClientsSection = () => {
       <section className="py-20 bg-white">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 angular-corner">
+            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 rounded-modern">
               TRUSTED PARTNERS
             </Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-black mb-8 tracking-tight">
@@ -83,7 +83,7 @@ export const ClientsSection = () => {
             <div className="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center">
               {clients.map((client, index) => (
                 <div key={index} className="group cursor-pointer" onClick={() => window.open(client.href, '_blank')}>
-                  <div className="w-full h-32 bg-black border-2 border-gray-200 angular-corner flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-8">
+                  <div className="w-full h-32 bg-black border-2 border-gray-200 rounded-modern flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-8">
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
@@ -110,7 +110,7 @@ export const ClientsSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-black border-4 border-red-500 shadow-2xl hover:shadow-red-500/25 transition-all duration-300 angular-corner ">
+              <Card key={index} className="bg-black border-4 border-red-500 shadow-2xl hover:shadow-red-500/25 transition-all duration-300 rounded-modern ">
                 <CardContent className="p-8">
                   <Quote className="w-10 h-10 text-red-500 mb-6" />
                   <blockquote className="text-white text-lg leading-relaxed mb-8 font-medium">
@@ -123,7 +123,7 @@ export const ClientsSection = () => {
                         <p className="text-white/80 font-medium">{testimonial.title}</p>
                         <p className="text-red-500 font-bold tracking-wide">{testimonial.company}</p>
                       </div>
-                      <Badge className="bg-red-500 text-black font-black border-2 border-white angular-corner">
+                      <Badge className="bg-red-500 text-black font-black border-2 border-white rounded-modern">
                         {testimonial.savings}
                       </Badge>
                     </div>
@@ -137,7 +137,7 @@ export const ClientsSection = () => {
       </section>
 
       {/* Case Studies - White Section */}
-      <section className="py-20 bg-white concrete-pattern">
+      <section className="py-20 bg-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-black text-black mb-6 tracking-tight">
@@ -150,10 +150,10 @@ export const ClientsSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="border-4 border-black shadow-xl hover:shadow-2xl transition-all duration-300 group bg-white angular-corner">
+              <Card key={index} className="border-4 border-black shadow-xl hover:shadow-2xl transition-all duration-300 group bg-white rounded-modern">
                 <CardContent className="p-10">
                   <div className="flex items-center justify-between mb-6">
-                    <Badge className="bg-red-500 text-white font-black px-4 py-2 border-2 border-black angular-corner">
+                    <Badge className="bg-red-500 text-white font-black px-4 py-2 border-2 border-black rounded-modern">
                       {study.client}
                     </Badge>
                     <ArrowRight className="w-6 h-6 text-red-500 group-hover:translate-x-2 transition-transform duration-300" />
@@ -163,7 +163,7 @@ export const ClientsSection = () => {
                   
                   <div className="flex flex-col sm:grid sm:grid-cols-3 gap-6">
                     {study.metrics.map((metric, idx) => (
-                      <div key={idx} className="text-center bg-gray-50 p-4 border-2 border-red-500 angular-corner">
+                      <div key={idx} className="text-center bg-gray-50 p-4 border-2 border-red-500 rounded-modern">
                         <p className="text-2xl font-black text-red-500 mb-1">{metric.value}</p>
                         <p className="text-black font-bold text-xs tracking-wide">{metric.label}</p>
                       </div>
@@ -175,7 +175,7 @@ export const ClientsSection = () => {
           </div>
 
           <div className="text-center mt-16">
-            <Button className="bg-red-500 hover:bg-red-600 text-white px-12 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner">
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-12 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 rounded-modern">
               VIEW ALL CASE STUDIES
             </Button>
           </div>

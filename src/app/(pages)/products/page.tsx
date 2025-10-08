@@ -112,7 +112,7 @@ export default function ProductsPage() {
       <section className="bg-black concrete-texture text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
-            <Badge className="bg-black text-white border-2 border-white px-6 py-3 font-bold mb-8 angular-corner">
+            <Badge className="bg-black text-white border-2 border-white px-6 py-3 font-bold mb-8 rounded-modern">
               PRODUCT SUITE
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tight">
@@ -141,7 +141,7 @@ export default function ProductsPage() {
                   {/* Product Image */}
                   <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                     <div className="relative">
-                      <div className="bg-gray-100 p-12 aspect-square flex items-center justify-center angular-clip border-4 border-black shadow-2xl group-hover:shadow-red-500/25 transition-all duration-300">
+                      <div className="bg-gray-100 p-12 aspect-square flex items-center justify-center rounded-modern-lg border-4 border-black shadow-2xl group-hover:shadow-red-500/25 transition-all duration-300">
                         <ImageWithFallback
                           src={product.image}
                           alt={product.title}
@@ -152,7 +152,7 @@ export default function ProductsPage() {
                       </div>
                       
                       {/* Floating Specs Badge */}
-                      <div className="absolute -top-6 -right-6 bg-red-500 border-4 border-black p-4 angular-corner shadow-xl">
+                      <div className="absolute -top-6 -right-6 bg-red-500 border-4 border-black p-4 rounded-modern shadow-xl">
                         {product.icon}
                       </div>
                     </div>
@@ -180,7 +180,7 @@ export default function ProductsPage() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {product.keyFeatures.map((feature, idx) => (
                           <div key={idx} className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-red-500 angular-corner flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-red-500 rounded-modern flex-shrink-0"></div>
                             <span className="text-gray-700 font-medium text-base">{feature}</span>
                           </div>
                         ))}
@@ -188,7 +188,7 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Camera Specifications */}
-                    <div className="bg-black p-6 angular-corner">
+                    <div className="bg-black p-6 rounded-modern">
                       <h3 className="text-lg font-black text-white mb-4 tracking-wide flex items-center gap-3">
                         <Camera className="w-5 h-5 text-red-500" />
                         CAMERA SPECIFICATIONS
@@ -241,7 +241,7 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black angular-corner group hover:border-white transition-colors duration-300">
+            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black rounded-modern group hover:border-white transition-colors duration-300">
               <CardHeader>
                 <Clock className="w-16 h-16 text-red-500 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
                 <CardTitle className="text-white font-black tracking-wide text-xl">REAL-TIME UNIFIED CONTROL</CardTitle>
@@ -254,7 +254,7 @@ export default function ProductsPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black angular-corner group hover:border-white transition-colors duration-300">
+            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black rounded-modern group hover:border-white transition-colors duration-300">
               <CardHeader>
                 <Activity className="w-16 h-16 text-red-500 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
                 <CardTitle className="text-white font-black tracking-wide text-xl">CROSS-PLATFORM ANALYTICS</CardTitle>
@@ -267,7 +267,7 @@ export default function ProductsPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black angular-corner group hover:border-white transition-colors duration-300">
+            <Card className="text-center border-4 border-red-500 shadow-2xl bg-black rounded-modern group hover:border-white transition-colors duration-300">
               <CardHeader>
                 <Map className="w-16 h-16 text-red-500 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" />
                 <CardTitle className="text-white font-black tracking-wide text-xl">SCALABLE DEPLOYMENT</CardTitle>
@@ -284,7 +284,7 @@ export default function ProductsPage() {
           {/* Final CTA */}
           <div className="text-center mt-16">
             <Link href="/request-quote">
-              <Button className="bg-red-500 hover:bg-red-600 text-white border-4 border-white hover:border-red-600 px-12 py-6 font-black text-xl angular-corner">
+              <Button className="bg-red-500 hover:bg-red-600 text-white border-4 border-white hover:border-red-600 px-12 py-6 font-black text-xl rounded-modern">
                 REQUEST CUSTOM SOLUTION
                 <ArrowRight className="w-6 h-6 ml-3" />
               </Button>

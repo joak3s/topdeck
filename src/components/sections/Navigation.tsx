@@ -47,7 +47,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg border-b-2 border-red-500">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg border-b-2">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -56,7 +56,7 @@ export const Navigation = () => {
               href="/"
               className="text-white hover:opacity-80 transition-opacity group"
             >
-              <Image src="/images/topdeck-logo-color-lt-grey.svg" alt="Topdeck Logo" width={150} height={100} />
+              <Image src="/images/topdeck-logo-color-lt-grey.svg" alt="Topdeck Logo" width={180} height={120} />
             </Link>
           </div>
 
@@ -88,7 +88,7 @@ export const Navigation = () => {
                     
                     {/* Custom Dropdown Menu */}
                     {hoveredDropdown === item.id && (
-                      <div className="absolute top-full left-0 bg-black border-red-500 border-2 rounded-md shadow-lg min-w-[200px] z-50">
+                      <div className="absolute top-full left-0 bg-black border-red-500 border-2 rounded-modern shadow-lg min-w-[200px] z-50">
                         {item.dropdown.map((subItem) => (
                           <Link
                             key={subItem.label}

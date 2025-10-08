@@ -131,7 +131,7 @@ export default function RequestQuotePage() {
     return (
       <div className="pt-16 min-h-screen bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <Card className="border-4 border-green-500 shadow-2xl angular-corner">
+          <Card className="border-4 border-green-500 shadow-2xl rounded-modern">
             <CardContent className="p-12 text-center">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
               <h1 className="text-4xl font-black text-black mb-4">
@@ -144,7 +144,7 @@ export default function RequestQuotePage() {
               <div className="space-y-4">
                 <Button
                   onClick={resetForm}
-                  className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200 angular-corner"
+                  className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200 rounded-modern"
                 >
                   Submit Another Request
                 </Button>
@@ -168,7 +168,7 @@ export default function RequestQuotePage() {
       <section className="bg-gradient-to-br from-black/90 to-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 angular-corner">
+            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 rounded-modern">
               REQUEST QUOTE
             </Badge>
             <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
@@ -185,7 +185,7 @@ export default function RequestQuotePage() {
       {/* Form Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-4 border-black shadow-2xl angular-corner">
+          <Card className="border-4 border-black shadow-2xl rounded-modern">
             <CardHeader className="bg-black text-white">
               <CardTitle className="text-3xl font-black text-center tracking-tight">
                 PROJECT DETAILS
@@ -211,7 +211,7 @@ export default function RequestQuotePage() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         placeholder="Your full name"
                       />
                     </div>
@@ -226,7 +226,7 @@ export default function RequestQuotePage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         placeholder="your.email@company.com"
                       />
                     </div>
@@ -241,7 +241,7 @@ export default function RequestQuotePage() {
                         required
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         placeholder="Your company name"
                       />
                     </div>
@@ -267,7 +267,7 @@ export default function RequestQuotePage() {
                       required
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                      className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                     >
                       <option value="">Select project type</option>
                       {projectTypes.map((type) => (
@@ -294,7 +294,7 @@ export default function RequestQuotePage() {
                         minDate={new Date()}
                         dateFormat="MM/dd/yyyy"
                         placeholderText="Select start date"
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         showMonthDropdown
                         showYearDropdown
                         dropdownMode="select"
@@ -314,7 +314,7 @@ export default function RequestQuotePage() {
                         minDate={formData.targetStartDate || new Date()}
                         dateFormat="MM/dd/yyyy"
                         placeholderText="Select end date"
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         showMonthDropdown
                         showYearDropdown
                         dropdownMode="select"
@@ -322,7 +322,7 @@ export default function RequestQuotePage() {
                     </div>
                     <div className="flex items-end">
                       {formData.targetStartDate && formData.targetEndDate && (
-                        <div className="w-full px-4 py-3 border-2 border-gray-300 bg-gray-50 angular-corner">
+                        <div className="w-full px-4 py-3 border-2 border-gray-300 bg-gray-50 rounded-modern">
                           <p className="text-sm font-medium text-gray-700">
                             <span className="font-bold">Duration:</span>{" "}
                             {differenceInMonths(formData.targetEndDate, formData.targetStartDate)} months
@@ -353,7 +353,7 @@ export default function RequestQuotePage() {
                         <div
                           key={option.id}
                           onClick={() => handleScopeChange(option.id)}
-                          className={`p-4 border-2 cursor-pointer transition-all duration-200 angular-corner ${isSelected
+                          className={`p-4 border-2 cursor-pointer transition-all duration-200 rounded-modern ${isSelected
                               ? "border-red-500 bg-red-50"
                               : "border-black hover:border-red-500 bg-white"
                             }`}
@@ -396,7 +396,7 @@ export default function RequestQuotePage() {
                         required
                         value={formData.siteLocation}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         placeholder="City, State or full address"
                       />
                     </div>
@@ -410,7 +410,7 @@ export default function RequestQuotePage() {
                         name="cameraCount"
                         value={formData.cameraCount}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner bg-white"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern bg-white"
                         placeholder="e.g., 5-10 cameras or Not sure"
                       />
                     </div>
@@ -421,7 +421,7 @@ export default function RequestQuotePage() {
                     <label className="block text-black font-bold mb-2">
                       Site Map/Plans (Optional)
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 hover:border-red-500 transition-colors p-6 text-center angular-corner bg-white">
+                    <div className="border-2 border-dashed border-gray-300 hover:border-red-500 transition-colors p-6 text-center rounded-modern bg-white">
                       <input
                         type="file"
                         id="siteMapFile"
@@ -461,7 +461,7 @@ export default function RequestQuotePage() {
                       rows={6}
                       value={formData.additionalMessage}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner resize-none bg-white"
+                      className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern resize-none bg-white"
                       placeholder="Tell us about your specific needs, timeline, budget considerations, or any special requirements for your project..."
                     />
                   </div>
@@ -472,7 +472,7 @@ export default function RequestQuotePage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting || formData.scope.length === 0 || !formData.targetStartDate || !formData.targetEndDate}
-                    className="w-full bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 disabled:border-gray-400 transition-all duration-200 angular-corner"
+                    className="w-full bg-red-500 hover:bg-red-600 disabled:bg-gray-400 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 disabled:border-gray-400 transition-all duration-200 rounded-modern"
                   >
                     {isSubmitting ? (
                       <>

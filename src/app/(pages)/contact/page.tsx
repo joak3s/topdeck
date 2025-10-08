@@ -38,7 +38,7 @@ export default function ContactPage() {
         <section className="bg-gradient-to-br from-black/80 to-black text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 angular-corner">
+            <Badge className="bg-black text-white px-6 py-2 font-bold border-2 border-red-500 mb-6 rounded-modern">
               CONTACT US
             </Badge>
             <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 SEND US A <span className="text-red-500">MESSAGE</span>
               </h2>
               
-              <Card className="border-4 border-black shadow-xl angular-corner">
+              <Card className="border-4 border-black shadow-xl rounded-modern">
                 <CardContent className="p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -76,7 +76,7 @@ export default function ContactPage() {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner"
+                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern"
                           placeholder="Your full name"
                         />
                       </div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner"
+                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern"
                           placeholder="your.email@company.com"
                         />
                       </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                           required
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner"
+                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern"
                           placeholder="Your company name"
                         />
                       </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner"
+                          className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern"
                           placeholder="(555) 123-4567"
                         />
                       </div>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                         required
                         value={formData.projectType}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern"
                       >
                         <option value="">Select project type</option>
                         <option value="commercial">Commercial Construction</option>
@@ -161,14 +161,14 @@ export default function ContactPage() {
                         rows={6}
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium angular-corner resize-none"
+                        className="w-full px-4 py-3 border-2 border-black focus:border-red-500 focus:ring-0 outline-none font-medium rounded-modern resize-none"
                         placeholder="Tell us about your project, site size, timeline, and specific requirements..."
                       />
                     </div>
 
                     <Button
                       type="submit"
-                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner"
+                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-6 font-black text-lg border-4 border-black hover:border-red-600 transition-all duration-200 rounded-modern"
                     >
                       <Send className="w-5 h-5 mr-2" />
                       SEND INQUIRY
@@ -185,7 +185,7 @@ export default function ContactPage() {
               </h2>
 
               <div className="space-y-8">
-                <Card className="border-4 border-black shadow-xl angular-corner">
+                <Card className="border-4 border-black shadow-xl rounded-modern">
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
                       <Mail className="w-6 h-6 text-red-500 mr-3" />
@@ -205,7 +205,7 @@ export default function ContactPage() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="border-4 border-black shadow-xl angular-corner">
+                <Card className="border-4 border-black shadow-xl rounded-modern">
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
                       <Phone className="w-6 h-6 text-red-500 mr-3" />
@@ -224,7 +224,7 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-4 border-black shadow-xl angular-corner">
+                <Card className="border-4 border-black shadow-xl rounded-modern">
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
                       <MapPin className="w-6 h-6 text-red-500 mr-3" />
@@ -241,7 +241,7 @@ export default function ContactPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-4 border-black shadow-xl angular-corner">
+                <Card className="border-4 border-black shadow-xl rounded-modern">
                   <CardHeader>
                     <CardTitle className="flex items-center text-black font-black">
                       <FileScan className="w-6 h-6 text-red-500 mr-3" />
@@ -253,7 +253,7 @@ export default function ContactPage() {
                       To provide you with a detailed quote, please fill out the form on this following page
                     </p>
                     <Link href="/request-quote">
-                      <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 font-bold border-4 border-black hover:border-red-600 transition-all duration-200 angular-corner">
+                      <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 font-bold border-4 border-black hover:border-red-600 transition-all duration-200 rounded-modern">
                         REQUEST QUOTE
                       </Button>
                     </Link>

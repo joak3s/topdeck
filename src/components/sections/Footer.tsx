@@ -21,13 +21,13 @@ export const Footer = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
-                <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200 angular-corner">
+                <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200 rounded-modern">
                   GET STARTED TODAY
                 </Button>
               </Link>
               <Button
                 variant="outline"
-                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 font-bold transition-all duration-200 angular-corner"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-black px-8 py-3 font-bold transition-all duration-200 rounded-modern"
               >
                 SCHEDULE DEMO
               </Button>
