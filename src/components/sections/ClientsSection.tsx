@@ -83,7 +83,7 @@ export const ClientsSection = () => {
             <div className="flex flex-col md:flex-row flex-wrap gap-8 items-center justify-center">
               {clients.map((client, index) => (
                 <div key={index} className="group cursor-pointer" onClick={() => window.open(client.href, '_blank')}>
-                  <div className="w-full h-32 bg-black border-2 border-gray-200 rounded-modern flex items-center justify-center mx-auto group-hover:border-red-500 group-hover:shadow-lg transition-all duration-300 p-8">
+                  <div className="w-full h-32 bg-black rounded-modern flex items-center justify-center mx-auto shadow-sm group-hover:scale-[1.02] group-hover:shadow-lg transition-all duration-300 p-8">
                     <Image
                       src={client.logo}
                       alt={`${client.name} logo`}
@@ -110,7 +110,14 @@ export const ClientsSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-black border-4 border-red-500 shadow-2xl hover:shadow-red-500/25 transition-all duration-300 rounded-modern ">
+              <Card key={index} className="bg-background shadow-2xl hover:shadow-red-500/25 transition-all duration-300 rounded-modern "
+              style={{
+                boxShadow: `
+                6px 6px 12px #000000,
+                -6px -6px 12px #1a1a1a,
+                inset 1px 1px 2px rgba(255, 255, 255, 0.05)
+              `
+              }}>
                 <CardContent className="p-8">
                   <Quote className="w-10 h-10 text-red-500 mb-6" />
                   <blockquote className="text-white text-lg leading-relaxed mb-8 font-medium">
@@ -137,7 +144,7 @@ export const ClientsSection = () => {
       </section>
 
       {/* Case Studies - White Section */}
-      <section className="py-20 bg-foreground">
+      <section className="py-20 bg-[#e6e6e6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-black text-black mb-6 tracking-tight">
@@ -150,7 +157,14 @@ export const ClientsSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {caseStudies.map((study, index) => (
-              <Card key={index} className="border-4 border-black shadow-xl hover:shadow-2xl transition-all duration-300 group bg-white rounded-modern">
+              <Card key={index} className="duration-300 group hover:scale-[1.02] transition-all duration-300 bg-[#f2f2f2] rounded-lg"
+              style={{
+                boxShadow: `
+                6px 6px 10px #393939,
+                -6px -6px 10px #FFFFFF,
+                inset 1px 1px 2px rgba(255, 255, 255, 0.05)
+              `
+              }}>
                 <CardContent className="p-10">
                   <div className="flex items-center justify-between mb-6">
                     <Badge className="bg-red-500 text-white font-black px-4 py-2 border-2 border-black rounded-modern">

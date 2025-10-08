@@ -74,7 +74,7 @@ export const Navigation = () => {
                     <Link href={item.href}>
                       <Button
                         variant="ghost"
-                        className={`text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
+                        className={`rounded-sm text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
                           pathname === item.href ||
                           pathname.startsWith(item.href + "/")
                             ? "bg-red-500 text-black"
@@ -105,7 +105,7 @@ export const Navigation = () => {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className={`text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
+                    className={`rounded-sm text-white hover:bg-red-500 hover:text-white px-6 py-2 font-semibold transition-all duration-200 ${
                       pathname === item.href ||
                       (item.href !== "/" && pathname.startsWith(item.href))
                         ? "bg-red-500 text-black"
@@ -122,7 +122,7 @@ export const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/request-quote">
-              <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200">
+              <Button className="rounded-sm bg-red-500 hover:bg-red-600 text-white px-8 py-3 font-bold border-2 border-red-500 hover:border-red-600 transition-all duration-200">
                 REQUEST QUOTE
               </Button>
             </Link>
